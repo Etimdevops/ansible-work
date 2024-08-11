@@ -4,27 +4,23 @@
   become: yes
 
   tasks:
-    - name: Install git
+    - name: Install Git
       yum:
         name: git
         state: present
 
-    - name: Install httpd
+    - name: Install Apache HTTP Server
       yum:
         name: httpd
         state: present
 
-    - name: start httpd
+    - name: Start and enable Apache HTTP Server
       service:
         name: httpd
         state: started
-
-    - name: enable httpd
-      service:
-        name: httpd
         enabled: yes
 
-    - name: Host code
+    - name: Clone application repository
       git:
         repo: https://github.com/Etimdevops/food3.git
         dest: /var/www/html
