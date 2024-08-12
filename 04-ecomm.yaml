@@ -13,6 +13,7 @@
       git:
         repo: https://github.com/Etimdevops/ecomm-3.git
         dest: /var/www/html
+        force: yes
 ...
 
 
