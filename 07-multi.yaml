@@ -1,6 +1,6 @@
 
 ---
-  - name: Install Apache HTTP server
+- name: Install Apache HTTP server
   hosts: g2
   become: yes
 
@@ -23,12 +23,12 @@
       yum:
         name: httpd
         state: present
-      when: ansible_distribution == "Centos"
+      when: ansible_distribution == "CentOS"
 
     - name: Ensure Apache is running on CentOS
       service:
         name: httpd
         state: started
         enabled: yes
-      when: ansible_distribution == "Centos"       
+      when: ansible_distribution == "CentOS"     
 ...
