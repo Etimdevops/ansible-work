@@ -1,34 +1,22 @@
 
 ---
-- name: Install Apache HTTP server
-  hosts: g2
+- name: Install httpd
+  hosts: g1
   become: yes
 
   tasks:
-    - name: Install Apache on Ubuntu
-      apt:
-        name: apache2
-        state: present
-        update_cache: yes
-      when: ansible_facts['os_family'] == 'Debian'
-
-    - name: Ensure Apache is running on Ubuntu
-      service:
-        name: apache2
-        state: started
-        enabled: yes
-      when: ansible_facts['os_family'] == 'Debian'
-
-    - name: Install Apache on CentOS
+    - name: Install httpd on linux
       yum:
         name: httpd
         state: present
-      when: ansible_facts['os_family'] == 'RedHat'
 
-    - name: Ensure Apache is running on CentOS
+    - name: Ensure httpd is running on Ubuntu
       service:
         name: httpd
-        state: started
-        enabled: yes
-      when: ansible_facts['os_family'] == 'RedHat'          
+        state: started 
+
+    - name: Ensure httpd is running on Ubuntu
+      service:
+        name: httpd
+        enabled: yes        
 ...
