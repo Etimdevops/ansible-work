@@ -3,8 +3,7 @@
   hosts: n6
   become: yes
   vars:
-    myusername: EtimDevops
-    myusername: Sherlyna
+    myusername: EtimDevops, Viraa
 
   tasks:
     - name: update dynamic page
