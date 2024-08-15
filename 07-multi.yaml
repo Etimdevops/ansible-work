@@ -20,7 +20,7 @@
       when: ansible_distribution == "Ubuntu"
 
     - name: Install Apache on CentOS
-      apt:
+      dnf:
         name: httpd
         state: present
       when: ansible_distribution == "CentOS" or ansible_distribution == "Amazon"
