@@ -18,12 +18,12 @@
         name: httpd
         state: present
         use_backend: dnf4
-      when: ansible_distribution == "CentOS" or ansible_distribution == "Amazon"
+      when: ansible_distribution == "CentOS" or ansible_distribution == "Amazon" or ansible_distribution == "RedHat"
 
     - name: Ensure Apache is running on CentOS
       service:
         name: httpd
         state: started
         enabled: yes
-      when: ansible_distribution == "CentOS" or ansible_distribution == "Amazon"
+      when: ansible_distribution == "CentOS" or ansible_distribution == "Amazon" or ansible_distribution == "RedHat"
 ...
