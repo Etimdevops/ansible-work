@@ -29,3 +29,5 @@
     - name: Display dnf version
       debug:
         msg: "DNF version installed: {{ dnf_version.stdout }}"
+
+...
