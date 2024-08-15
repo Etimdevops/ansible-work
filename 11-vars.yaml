@@ -4,6 +4,7 @@
   become: yes
   vars:
     myusername: EtimDevops
+    myusername: Sherlyna
 
   tasks:
     - name: update dynamic page
