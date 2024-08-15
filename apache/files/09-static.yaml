@@ -1,0 +1,12 @@
+---
+- name: static page
+  hosts: n6
+  become: yes
+
+  tasks:
+    - name: display static page
+      copy:
+        src: static.html
+        dest: /var/www/html/static.html
+        force: yes
+...
